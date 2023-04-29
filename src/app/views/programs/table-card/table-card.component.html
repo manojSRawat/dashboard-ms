@@ -1,6 +1,9 @@
-<p>table-card works!</p>
-
-
-{{tab | json}}
-
-{{card | json}}
+<div class="chart-wrapper">
+  <div class="xs:col-span-full text-center py-2" *ngIf="card?.config">
+    <app-material-heat-chart-table
+      [tableData]="card?.config"
+      [title]="card?.name"
+    ></app-material-heat-chart-table>
+  </div>
+</div>
+<div class="noData" *ngIf="card?.config">No Data Found</div>
