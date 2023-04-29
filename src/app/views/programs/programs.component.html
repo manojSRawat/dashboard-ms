@@ -1,8 +1,22 @@
-<p>programs works!</p>
+<div class="metric-card-wrapper">
+  <div class="grid gap-4 grid-cols-6 xmd:grid-cols-12">
+    <div class="col-span-12">
+      <p class="program-title">Dynamic Title</p>
+      <p class="program-desc">Dynamic Description</p>
+    </div>
+  </div>
+</div>
 
-
-main-card-view
+<div class="custom-tab-group-wrapper">
+    <mat-tab-group [selectedIndex]="tabIndex" mat-align-tabs="start" animationDuration="0ms"
+        (selectedTabChange)="onTabChanged($event)" appFullScreen>
+        <mat-tab label="Average Teachers Reporting Attendance" >
+           TAB 1
+        </mat-tab>
+        <mat-tab label="Average Teachers Present" >
+            Tab 2
+        </mat-tab>
+    </mat-tab-group>
+</div>
 
 <app-tab></app-tab>
-
-
