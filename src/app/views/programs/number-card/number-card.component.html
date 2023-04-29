@@ -1,7 +1,11 @@
 <div class="col-span-full tab-wrapper">
   <div class="reports-row">
     <div class="row-wrapper grid grid-cols-2 gap-4">
-      <div class="col-span-2 xmd:col-span-1 div-shadow" id="bignumber">60%</div>
+      <div class="col-span-2 xmd:col-span-1 div-shadow" id="bignumber">
+        <app-big-number
+          [bigNumberReportData]="60%"
+        ></app-big-number>
+      </div>
     </div>
   </div>
 </div>
