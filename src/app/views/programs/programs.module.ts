@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { ProgramsRoutingModule } from './programs-routing.module';
 import { ProgramsComponent } from './programs.component';
-import { CardComponent } from './card/card.component';
 import { MatTabsModule } from "@angular/material/tabs";
 import { SharedModule } from "../../shared/shared.module";
-
+import { NumberCardComponent } from './number-card/number-card.component';
+import { MapCardComponent } from './map-card/map-card.component';
+import { TableCardComponent } from './table-card/table-card.component';
 
 @NgModule({
   declarations: [
     ProgramsComponent,
-    CardComponent
+    NumberCardComponent,
+    MapCardComponent,
+    TableCardComponent
   ],
   imports: [
     CommonModule,

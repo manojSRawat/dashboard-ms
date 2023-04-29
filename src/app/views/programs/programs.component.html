@@ -11,7 +11,7 @@
     <mat-tab-group [selectedIndex]="tabIndex" mat-align-tabs="start" animationDuration="0ms"
         (selectedTabChange)="onTabChanged($event)" appFullScreen>
         <ng-container *ngFor="let tab of tabs">
-            <mat-tab [label]="tab.name" >
+            <mat-tab [label]="tab.name" >                
                 <app-card [tab]="tab"></app-card>
             </mat-tab>
         </ng-container>
