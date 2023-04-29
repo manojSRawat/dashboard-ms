@@ -17,6 +17,9 @@
   >
     <ng-container *ngFor="let tab of tabs">
       <mat-tab [label]="tab.name">
+        <p class="tab-desc">
+          {{ tab.description }}
+        </p>
         <ng-container *ngFor="let card of cards">
           <ng-container [ngSwitch]="card.type">
             <app-map-card
