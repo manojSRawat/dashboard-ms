@@ -108,6 +108,14 @@ routes = [
             (module) => module.DikshaModule
           ),
         canLoad: [AuthGuard]
+      },
+      {
+        path: 'dynamic',
+        loadChildren: () =>
+          import('./views/programs/programs.module').then(
+            (module) => module.ProgramsModule
+          ),
+        canLoad: [AuthGuard]
       }
     ],
   },

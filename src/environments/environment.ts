@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   google_analytics_tracking_id: "UA-260554959-3",
-  apiURL: 'http://localhost:3008',
+  apiURL: 'https://cqube-apr28-demo.tibilprojects.com/api/queryBuilder',
   stateCode: "AP",
   numberFormat: {
     reports: {
