@@ -5,6 +5,8 @@ import { ProgramsRoutingModule } from './programs-routing.module';
 import { ProgramsComponent } from './programs.component';
 import { TabComponent } from './tab/tab.component';
 import { CardComponent } from './card/card.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -13,9 +15,11 @@ import { CardComponent } from './card/card.component';
     TabComponent,
     CardComponent
   ],
-  imports: [
-    CommonModule,
-    ProgramsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        ProgramsRoutingModule,
+        MatTabsModule,
+        SharedModule
+    ]
 })
 export class ProgramsModule { }

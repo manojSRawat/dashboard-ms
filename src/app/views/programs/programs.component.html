@@ -10,13 +10,10 @@
 <div class="custom-tab-group-wrapper">
     <mat-tab-group [selectedIndex]="tabIndex" mat-align-tabs="start" animationDuration="0ms"
         (selectedTabChange)="onTabChanged($event)" appFullScreen>
-        <mat-tab label="Average Teachers Reporting Attendance" >
-           TAB 1
-        </mat-tab>
-        <mat-tab label="Average Teachers Present" >
-            Tab 2
-        </mat-tab>
+        <ng-container *ngFor="let tab of tabs">
+            <mat-tab [label]="tab.name" >
+                <app-card [tab]="tab"></app-card>
+            </mat-tab>
+        </ng-container>
     </mat-tab-group>
 </div>
-
-<app-tab></app-tab>
