@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-number-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./number-card.component.scss']
 })
 export class NumberCardComponent implements OnInit {
+  @Input() tab;
+  @Input() card;
 
   constructor() { }
 

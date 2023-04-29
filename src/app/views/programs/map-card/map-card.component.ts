@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-map-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-card.component.scss']
 })
 export class MapCardComponent implements OnInit {
+  @Input() tab;
+  @Input() card;
 
   constructor() { }
 
