@@ -8,6 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class NumberCardComponent implements OnInit {
   @Input() tab;
   @Input() card;
+  bigNumber = {
+    reportName: "Data Title",
+    averagePercentage: '60'
+  }
 
   constructor() { }
 
