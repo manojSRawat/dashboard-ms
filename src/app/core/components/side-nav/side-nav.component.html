@@ -15,7 +15,12 @@
                     class="menu-item" id="menu-item-{{i}}" name="menu-item"
                     [ngClass]="menuItem.isSelected?'selectedMenu':''" (click)="setMenuLinkActive(menuItem)">
                     <div class="btn active inside">
-                        <i class="img"><img class="menuIcon" src="assets/images/{{menuItem.icon}}"></i>
+                        <i class="img">
+                            <img class="menuIcon" src="assets/images/{{menuItem.icon}}" *ngIf="menuItem.icon; else iconUrl">
+                            <ng-template #iconUrl>
+                                <img  class="menuIcon" src="{{menuItem.iconUrl}}">
+                            </ng-template>
+                        </i>
                         <span>{{menuItem.label}}</span>
                     </div>
                 </li>
@@ -24,7 +29,12 @@
                     [ngClass]="menuItem.isSelected?'selectedMenu':''" (click)="setMenuLinkActive(menuItem)"
                     matTooltip={{menuItem.label}}>
                     <div class="btn active inside">
-                        <i class="img"><img class="menuIcon" src="assets/images/{{menuItem.icon}}"></i>
+                        <i class="img">
+                            <img class="menuIcon" src="assets/images/{{menuItem.icon}}" *ngIf="menuItem.icon; else iconUrl">
+                            <ng-template #iconUrl>
+                                <img  class="menuIcon" src="{{menuItem.iconUrl}}">
+                            </ng-template>
+                        </i>
                         <span>{{menuItem.label}}</span>
                     </div>
                 </li>

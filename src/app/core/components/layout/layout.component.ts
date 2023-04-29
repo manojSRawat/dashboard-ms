@@ -116,9 +116,32 @@ export class LayoutComponent implements OnInit {
         }
 
       });
+
+      this.fetchMenu();
     })
 
   }
+
+  fetchMenu() {
+    this._commonService.getMenu().subscribe(
+        (data: any) => {
+          console.log('data', data);
+          if (data.menus) {
+            data.menus.forEach(menu => {
+              let menuToDisplay: IMenuItem | any = {};
+              menuToDisplay.label = menu.name;
+              menuToDisplay.path = 'dynamic/' + menu.path;
+              menuToDisplay.icon = null;
+              menuToDisplay.iconUrl = menu.icon_url;
+              menuToDisplay.isSelected = false;
+
+              this.menu.push(menuToDisplay);
+            });
+          }
+        }
+    )
+  }
+
   rbacdetails() {
     return this.rbac.getRbacDetails()
   }
