@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramsComponent implements OnInit {
   tabs = [
-    { id: 1, name: 'Tab 1', description: 'some data' },
-    { id: 1, name: 'Tab 2', description: 'some data' },
-    { id: 1, name: 'Tab 3', description: 'some data' },
-    { id: 1, name: 'Tab 4', description: 'some data' },
+    { id: 1, name: 'Tab 1', description: 'some data of tab 1' },
+    { id: 1, name: 'Tab 2', description: 'some data of tab 2' },
+    { id: 1, name: 'Tab 3', description: 'some data of tab 3' },
+    { id: 1, name: 'Tab 4', description: 'some data of tab 4' },
   ];
   cards = [
     { id: 1, type: 'number', config: '' },

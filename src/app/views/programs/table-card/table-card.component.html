@@ -1,11 +1,8 @@
-<section>
-  Taaaablbbblbllbe
-</section>
 <div class="chart-wrapper">
-  <div class="xs:col-span-full text-center py-2" *ngIf="card?.config">
+  <div class="xs:col-span-full text-center py-2">
     <app-material-heat-chart-table
-      [tableData]="card?.config"
-      [title]="card?.name"
+      [tableData]="tableData"
+      [title]="'TEST'"
     ></app-material-heat-chart-table>
   </div>
 </div>

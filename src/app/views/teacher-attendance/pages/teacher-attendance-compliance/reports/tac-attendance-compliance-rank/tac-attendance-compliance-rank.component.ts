@@ -22,14 +22,14 @@ export class TacAttendanceComplianceRankComponent implements OnInit {
   // level = environment.config === 'NVSK' ? 'VSK' : 'district';
   filterIndex: any;
   rbacDetails: any;
-  title:any ="Rank in % Teachers Reporting Attendance"
+  title: any = "Rank in % Teachers Reporting Attendance"
 
   @Output() exportDates = new EventEmitter<any>();
   @Input() startDate: any;
   @Input() endDate: any;
 
-  constructor(private readonly _commonService: CommonService, 
-    private csv:TeacherAttendanceComplianceComponent,private readonly _wrapperService: WrapperService, private _rbacService: RbacService) {
+  constructor(private readonly _commonService: CommonService,
+    private csv: TeacherAttendanceComplianceComponent, private readonly _wrapperService: WrapperService, private _rbacService: RbacService) {
     this._rbacService.getRbacDetails().subscribe((rbacDetails: any) => {
       this.rbacDetails = rbacDetails;
     })
@@ -37,7 +37,7 @@ export class TacAttendanceComplianceRankComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.getReportData();
+    // this.getReportData();    
   }
 
   getReportData(startDate = undefined, endDate = undefined): void {
@@ -51,7 +51,7 @@ export class TacAttendanceComplianceRankComponent implements OnInit {
       filters.every((filter: any) => {
         if (Number(this.rbacDetails?.role) === Number(filter.hierarchyLevel)) {
           queries = { ...filter?.actions?.queries }
-          timeSeriesQueries = {...filter?.timeSeriesQueries}
+          timeSeriesQueries = { ...filter?.timeSeriesQueries }
           Object.keys(queries).forEach((key) => {
             queries[key] = this.parseRbacFilter(queries[key])
             timeSeriesQueries[key] = this.parseRbacFilter(timeSeriesQueries[key])
@@ -135,7 +135,7 @@ export class TacAttendanceComplianceRankComponent implements OnInit {
           }
         })
       }
-      console.log(this.tableReportData?.data?.length <= 0)
+      console.log(this.tableReportData?.data?.length <= 0)      
 
       if (this.tableReportData?.data?.length > 0) {
         let reportsData = { reportData: this.tableReportData.data, reportType: 'table', reportName: this.title }
