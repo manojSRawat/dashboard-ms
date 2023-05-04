@@ -20,7 +20,7 @@ export const config = {
             "district_avg_score": "select school.district_name, round((sum(progression.sum)*100)/count(progression.school_id)) as percent_school_met_criteria from datasets.student_progression_progression_school0academicyear as progression inner join dimensions.school on progression.school_id = school.school_id where district_name is not null and district_name != '' and academicyear_id = '2021-2022' group by school.district_name order by round( (sum(progression.sum)*100)/count(progression.school_id) ) desc;",
         },
         "levels": '',
-        "filters": [           
+        "filters": [
         ],
         "options": {
             "table": {
@@ -221,7 +221,7 @@ export const config = {
                 "hierarchyLevel": "4",
                 "actions": {
                     "queries": {
-                        "avg_score": "select round((sum(progression.sum)*100)/count(progression.school_id)) as percent_school_met_criteria from datasets.student_progression_progression_school0academicyear as progression inner join dimensions.school on progression.school_id = school.school_id where district_name != '' and cluster_id = {cluster_id};",
+                        "avg_score": "select coalesce(round((sum(progression.sum)*100)/count(progression.school_id))::text, '-') as percent_school_met_criteria from datasets.student_progression_progression_school0academicyear as progression inner join dimensions.school on progression.school_id = school.school_id where district_name != '' and cluster_id = {cluster_id}",
 
                         "district_avg_score": "select school_name, case when progression.sum = 1 THEN 'YES' ELSE 'NO' END as progression_frozen from datasets.student_progression_progression_school0academicyear as progression inner join dimensions.school on progression.school_id = school.school_id where district_name != '' and cluster_id = {cluster_id};",
                     }
@@ -238,24 +238,20 @@ export const config = {
                     },
                     {
                         name: "Progression Frozen %",
-                        property: "percent_school_met_criteria",
+                        property: "progression_frozen",
                         class: "text-center",
-                        valueSuffix: "%",
+                        valueSuffix: "",
                         isHeatMapRequired: true,
                         color: {
-                            type: "percentage",
+                            type: "status",
                             values: [
                                 {
                                     color: "#d8ead3",
-                                    breakPoint: 70
-                                },
-                                {
-                                    color: "#fff2cc",
-                                    breakPoint: 40
+                                    value: "yes"
                                 },
                                 {
                                     color: "#f4cccc",
-                                    breakPoint: 0
+                                    value: "no"
                                 }
                             ]
                         },

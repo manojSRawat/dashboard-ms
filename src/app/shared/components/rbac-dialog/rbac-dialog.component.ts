@@ -85,7 +85,7 @@ export class RbacDialogComponent implements OnInit {
         ...this.updatedForm,
         ...this.rbacForm.value
       }
-      console.log(this.updatedForm)
+     // console.log(this.updatedForm)
       this._rbacService.setRbacDetails(this.updatedForm);
       // this._rbacService.setRbacDetails(this.rbacForm.value);
       this.router.navigate(['/summary-statistics'])
@@ -170,7 +170,7 @@ export class RbacDialogComponent implements OnInit {
       ...this.updatedForm,
       [option[filter?.valueProp]]: option[filter?.labelProp]
     }
-    console.log(this.updatedForm)
+   
     return option[filter?.valueProp]
   }
 

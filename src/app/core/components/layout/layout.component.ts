@@ -125,7 +125,7 @@ export class LayoutComponent implements OnInit {
   fetchMenu() {
     const dynamicRoutes = [
       { name: 'School Infrastructure', icon: 'udise.png', icon_url: '', path: 'school-infrastructure' },
-      { name: 'Student Assessments', icon: 'udise.png', icon_url: '', path: 'student-assessment' },
+      // { name: 'Student Assessments', icon: 'udise.png', icon_url: '', path: 'student-assessment' },
       { name: 'Student Progression', icon: 'progression.jpeg', icon_url: '', path: 'school-progression' },
     ];
 
