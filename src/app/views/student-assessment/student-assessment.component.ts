@@ -198,6 +198,18 @@ export class StudentAssessmentComponent implements OnInit {
 
                 } else if (query && card.type === 'barChart') {
                     // todo use bar table
+                    this.createCard(card, {series: [
+                        {
+                            name: 'Year 1990',
+                            type: 'column',
+                            data: [631, 727, 3202, 721, 26]
+                        },
+                        {
+                            name: 'Year 1991',
+                            type: 'column',
+                            data: [631, 23, 343, 545, 44]
+                        }]}
+                    );
                 }
             }
 
@@ -207,7 +219,7 @@ export class StudentAssessmentComponent implements OnInit {
     createCard(card, data) {
         if (data && data.length) {
             card.value = {reportName: card.reportName, averagePercentage: data[0]['compliance_percentage']};
-        } else if (card.type === 'table' || card.type === 'map') {
+        } else if (card.type === 'table' || card.type === 'map' || card.type === 'barChart') {
             card.value = data;
         }
         this.cards = Object.values(this.cardMap[this.rbacDetails.role]);

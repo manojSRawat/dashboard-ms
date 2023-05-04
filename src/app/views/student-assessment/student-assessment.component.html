@@ -47,7 +47,7 @@
                     </ng-container>
                     <ng-container *ngSwitchCase="'barChart'">
                         <div class="chart-wrapper">
-                            Bar Graph
+                            <app-bar-chart [title]="card.title" [options]="card.value"></app-bar-chart>
                         </div>
                     </ng-container>
                 </ng-container>
